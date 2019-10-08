@@ -7,19 +7,17 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'social-wall';
-
   dataLoaded = false;
 
   items = [];
 
   filters: any[] = this.appService.getPostFilters();
 
-
   progressSpinnerOptions: any = {
     diameter: 60,
     strokeWidth: 8
   };
+
 
   constructor(
     private appService: AppService

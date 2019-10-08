@@ -8,7 +8,7 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class AppService {
 
-  apiEndpoint = 'http://private-cc77e-aff.apiary-mock.com/posts';
+  apiEndpoint = 'https://private-cc77e-aff.apiary-mock.com/posts';
 
 
   constructor(
