@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-manual-post',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manual-post.component.scss']
 })
 export class ManualPostComponent implements OnInit {
+  @Input() item: any;
 
   constructor() { }
 

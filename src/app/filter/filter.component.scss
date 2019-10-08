@@ -3,6 +3,7 @@
 
 
 label {
+  cursor: pointer;
   padding: 12px;
   text-align: center;
   width: 100%;
@@ -22,25 +23,24 @@ label {
 
 
 .filter {
-  border: 2px solid black;
-  color: black;
-  cursor: pointer;
+  border: 2px solid #c2185b;
+  color: #c2185b;
   -webkit-transition: background-color 0.3s, color 0.4s ;
   -moz-transition: background-color 0.4s , color 0.4s ;
   -o-transition: background-color 0.4s , color 0.4s ;
   transition: background-color 0.4s , color 0.4s ;
 
   &:hover {
-    background-color: black;
+    background-color: #c2185b;
     color: white;
   }
 
   &.active {
-    background-color: black;
+    background-color: #c2185b;
     color: white;
 
     :hover {
-      background-color: black;
+      background-color: #c2185b;
       color: white;
       cursor: pointer;
     }

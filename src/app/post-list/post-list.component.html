@@ -2,15 +2,22 @@
     class="listContainer"
     fxLayout="row wrap" fxLayoutGap="12px">
   <div *ngFor="let item of items" fxFlex>
-    <div *ngIf="postIsNotFiltered(item)">
-    <pre>
-      {{item.service_name}}
-      {{item.item_name}}
-    </pre>
-    </div>
+    <ng-container *ngIf="postIsNotFiltered(item)">
+      <app-manual-post
+        *ngIf="item.service_slug === 'manual'"
+        [item]="item"></app-manual-post>
+
+      <app-instagram-post
+        *ngIf="item.service_slug === 'instagram'"
+        [item]="item"></app-instagram-post>
+
+      <app-twitter-post
+        *ngIf="item.service_slug === 'twitter'"
+        [item]="item"></app-twitter-post>
+    </ng-container>
   </div>
 </div>
 
-<div class="loadMore">
+<!-- <div class="loadMore">
   <button (click)="loadMorePosts()">Load more</button>
-</div>
+</div> -->

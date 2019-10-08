@@ -12,6 +12,9 @@ import { TwitterPostComponent } from './twitter-post/twitter-post.component';
 import { InstagramPostComponent } from './instagram-post/instagram-post.component';
 import { ManualPostComponent } from './manual-post/manual-post.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatButtonModule} from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
     HttpClientModule,
     FlexLayoutModule,
-    ReactiveFormsModule
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

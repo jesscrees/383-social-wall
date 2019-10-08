@@ -16,6 +16,11 @@ export class AppComponent {
   filters: any[] = this.appService.getPostFilters();
 
 
+  progressSpinnerOptions: any = {
+    diameter: 60,
+    strokeWidth: 8
+  };
+
   constructor(
     private appService: AppService
   ) {
@@ -23,10 +28,12 @@ export class AppComponent {
   }
 
   getData() {
+    this.dataLoaded = false;
+
     this.appService.getData()
     .subscribe((response) => {
-      this.items = response.items;
-      console.log(this.items);
+      this.items = this.items.concat(response.items);
+
       this.dataLoaded = true;
 
     }, error => {
