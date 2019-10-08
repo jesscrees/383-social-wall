@@ -11,7 +11,9 @@ export class AppComponent {
 
   dataLoaded = false;
 
-  posts = [];
+  items = [];
+
+  filters: any[] = this.appService.getPostFilters();
 
 
   constructor(
@@ -23,13 +25,18 @@ export class AppComponent {
   getData() {
     this.appService.getData()
     .subscribe((response) => {
-      this.posts = response.items;
-      console.log(this.posts);
+      this.items = response.items;
+      console.log(this.items);
       this.dataLoaded = true;
 
     }, error => {
       // Error getting data
       console.log(error);
     });
+  }
+
+
+  filtersChanged($event) {
+    this.filters = $event.filters;
   }
 }

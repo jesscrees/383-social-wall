@@ -1,0 +1,61 @@
+
+
+
+
+label {
+  padding: 12px;
+  text-align: center;
+  width: 100%;
+
+  // -webkit-transition: background-color 0.3s, color 0.4s ;
+  // -moz-transition: background-color 0.4s , color 0.4s ;
+  // -o-transition: background-color 0.4s , color 0.4s ;
+  // transition: background-color 0.4s , color 0.4s ;
+}
+
+// label:hover {
+//   background-color: white;
+//   color: black;
+//   cursor: pointer;
+// }
+
+
+
+.filter {
+  border: 2px solid black;
+  color: black;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s, color 0.4s ;
+  -moz-transition: background-color 0.4s , color 0.4s ;
+  -o-transition: background-color 0.4s , color 0.4s ;
+  transition: background-color 0.4s , color 0.4s ;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+
+  &.active {
+    background-color: black;
+    color: white;
+
+    :hover {
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+ 
+// label:hover {
+//   background: white;
+//   color: black;
+//   cursor: pointer;
+// }
+
+
+input[type="checkbox"] {
+  margin: 0;
+  visibility: hidden;
+  width: 0;
+}

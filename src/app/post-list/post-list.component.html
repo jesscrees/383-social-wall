@@ -1,0 +1,10 @@
+<div
+    class="listContainer"
+    fxLayout="row wrap" fxLayoutGap="12px">
+    {{filters | json}}
+  <div *ngFor="let item of items">
+    <pre>
+      {{item | json}}
+    </pre>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div
+    class="filtersContainer"
+    fxLayout="row wrap" fxLayoutGap="12px"
+    [formGroup]="form">
+  <div
+    *ngFor="let filter of filters.controls"
+    class="filter"
+    [ngClass]="{
+      'active': filter.get('enabled').value
+    }"
+    fxFlex
+    [formGroup]="filter">
+
+    <input
+        [id]="filter.get('name').value"
+        type="checkbox"
+        formControlName="enabled"
+        (change)="handleClick()"/>
+
+    <label [for]="filter.get('name').value" fxFlex>
+        {{filter.get('name').value}}
+    </label>
+
+  </div>
+</div>
