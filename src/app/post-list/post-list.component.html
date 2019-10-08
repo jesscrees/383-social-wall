@@ -1,10 +1,16 @@
 <div
     class="listContainer"
     fxLayout="row wrap" fxLayoutGap="12px">
-    {{filters | json}}
-  <div *ngFor="let item of items">
+  <div *ngFor="let item of items" fxFlex>
+    <div *ngIf="postIsNotFiltered(item)">
     <pre>
-      {{item | json}}
+      {{item.service_name}}
+      {{item.item_name}}
     </pre>
+    </div>
   </div>
+</div>
+
+<div class="loadMore">
+  <button (click)="loadMorePosts()">Load more</button>
 </div>

@@ -18,11 +18,15 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
   }
 
-  filterPosts() {
-    // Based on the enabled filters
-    // Decide which posts to show
-    console.log(this.filters);
-    console.log(this.items);
+
+  loadMorePosts() {
+    this.appService.getData()
+    .subscribe((response: any) => {
+      this.items.push(response.items);
+    });
   }
 
+  postIsNotFiltered(item): boolean {
+    return this.filters.filter(x => x.name === item.service_name && x.enabled).length > 0;
+  }
 }
