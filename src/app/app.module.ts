@@ -12,9 +12,11 @@ import { TwitterPostComponent } from './twitter-post/twitter-post.component';
 import { InstagramPostComponent } from './instagram-post/instagram-post.component';
 import { ManualPostComponent } from './manual-post/manual-post.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatButtonModule} from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FlexLayoutModule,
     MatButtonModule,
+    MatCardModule,
     MatProgressSpinnerModule,
+    NgxMasonryModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],

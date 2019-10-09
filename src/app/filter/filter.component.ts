@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AppService } from '../app.service';
-import { FormBuilder, Form, FormArray, FormGroup } from '@angular/forms';
+import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-filter',

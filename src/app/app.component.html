@@ -1,11 +1,14 @@
 <div
-class="container"
-fxLayout="column" fxLayoutGap="12px">
+    class="container"
+    fxLayout="column" fxLayoutGap="12px">
+
   <app-filter (filtersChanged)="filtersChanged($event)"></app-filter>
 
   <app-post-list [filters]="filters" [items]="items"></app-post-list>
 
-  <div class="loadMore" fxLayout="column" fxLayoutAlign="center center">
+  <div
+      class="loadMore"
+      fxLayout="column" fxLayoutAlign="center center">
     <mat-spinner
       *ngIf="!dataLoaded"
       [diameter]="progressSpinnerOptions.diameter"
@@ -19,4 +22,5 @@ fxLayout="column" fxLayoutGap="12px">
       Load more
     </button>
   </div>
+
 </div>

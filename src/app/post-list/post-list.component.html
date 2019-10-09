@@ -1,7 +1,10 @@
-<div
-    class="listContainer"
-    fxLayout="row wrap" fxLayoutGap="12px">
-  <div *ngFor="let item of items" fxFlex>
+<div class="masonry-with-columns">
+  <div
+      *ngFor="let item of items"
+      class="masonry-item"
+      [ngClass]="{
+        'hidden': !postIsNotFiltered(item)
+      }">
     <ng-container *ngIf="postIsNotFiltered(item)">
       <app-manual-post
         *ngIf="item.service_slug === 'manual'"
@@ -17,7 +20,3 @@
     </ng-container>
   </div>
 </div>
-
-<!-- <div class="loadMore">
-  <button (click)="loadMorePosts()">Load more</button>
-</div> -->

@@ -1,1 +1,21 @@
-<p>twitter-post works!</p>
+<mat-card>
+  <p>Tweet</p>
+
+  <img [src]="item.item_data.image_url">
+  <img [src]="item.item_data.user.avatar">
+
+  <div>
+    Name: {{item.item_data.user.name}}
+    <br/>
+    Username: {{item.item_data.user.username}}
+  </div>
+
+  <div>
+    Tweet: {{item.item_data.tweet}}
+  </div>
+
+  <!-- <pre>
+      {{item.item_data.is_reply | json}}
+      {{item.item_data.is_retweet | json}}
+  </pre> -->
+</mat-card>

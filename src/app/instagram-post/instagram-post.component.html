@@ -1,1 +1,25 @@
-<p>instagram-post works!</p>
+<mat-card>
+  <p>instagram</p>
+
+  <img [src]="item.item_data.user.avatar">
+  <img [src]="item.item_data.image.medium">
+
+  <img [src]="item.item_data.image_url">
+
+  <p>
+    {{item.item_data.caption}}
+  </p>
+
+
+  <!-- <pre>
+    {{item.item_data.link | json}}
+    {{item.item_data.caption | json}}
+    {{item.item_data.user.username | json}}
+    {{item.item_data.user.avatar | json}}
+    {{item.item_data.image.thumb | json}}
+    {{item.item_data.image.medium | json}}
+    {{item.item_data.image.large | json}}
+    {{item.item_data.video | json}}
+    {{item.item_data.image_url | json}}
+  </pre> -->
+</mat-card>

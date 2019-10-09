@@ -1,5 +1,17 @@
 @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body { 
+  background-color: whitesmoke;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-card {
+  background-color: white !important;
+  color: black !important;
+}

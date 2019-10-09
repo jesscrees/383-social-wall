@@ -1,5 +1,17 @@
-<p>manual-post works!</p>
+<mat-card class="post">
 
-<pre>
-  {{item | json}}
-</pre>
+  <img [src]="item.item_data.image_url" [alt]="item.item_name">
+
+  <div class="itemText">
+    {{item.item_data.text}}
+  </div>
+
+  <div>
+    <a [href]="item.item_data.link" target="_blank">{{item.item_data.link_text}}</a>
+  </div>
+
+  <pre>
+      {{item.item_published | json}}
+  </pre>
+  
+</mat-card>
