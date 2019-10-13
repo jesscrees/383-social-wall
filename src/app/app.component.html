@@ -2,16 +2,27 @@
     class="container"
     fxLayout="column" fxLayoutGap="12px">
 
+  <button (click)="getData()" type="button">
+    Load more1
+  </button>
+
   <app-filter (filtersChanged)="filtersChanged($event)"></app-filter>
 
-  <app-post-list [filters]="filters" [items]="items"></app-post-list>
+  <button (click)="getData()" type="button">
+    Load more2
+  </button>
 
+  <app-post-list [filters]="filters" [items]="items"></app-post-list>
+  <button (click)="getData()" type="button">
+    Load more3
+  </button>
   <div
       class="loadMore"
       fxLayout="column" fxLayoutAlign="center center">
-    <button (click)="getData()">
-      Load more
+    <button (click)="getData()" type="button">
+      Load more4
     </button>
+    <br/>
     <!-- <mat-spinner
       *ngIf="!dataLoaded"
       class="progressSpinner"
@@ -22,8 +33,9 @@
         *ngIf="dataLoaded"
         class="primaryButton"
         (click)="getData()"
-        mat-raised-button>
-      Load more
+        mat-raised-button
+        type="button">
+      Load more5
     </button>
   </div>
 </div>
