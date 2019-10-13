@@ -6,7 +6,7 @@
   <ng-container *ngFor="let item of items">
     <div class="grid-sizer"></div>
 
-    <div *ngIf="postIsNotFiltered(item)" ngxMasonryItem class="masonry-item" >
+    <div ngxMasonryItem class="masonry-item" >
       {{item.item_published | json}}
       
       <app-manual-post  *ngIf="postIsNotFiltered(item) && item.service_slug === 'manual'"

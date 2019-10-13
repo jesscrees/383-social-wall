@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, ViewChild, ElementRef, HostListener, AfterViewInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ViewChild, HostListener } from '@angular/core';
 import { AppService } from '../app.service';
 import { NgxMasonryComponent } from 'ngx-masonry';
 
@@ -16,22 +16,20 @@ export class PostListComponent implements OnChanges {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    console.log('resizing');
-    this.masonry.updateLayout = true;
-    this.masonry.useImagesLoaded = true;
-    this.masonry.reloadItems();
+    // console.log('resizing');
+    // this.masonry.updateLayout = true;
+    // this.masonry.useImagesLoaded = true;
+    // this.masonry.reloadItems();
   }
 
 
   constructor(
-    private appService: AppService,
-    private elementRef: ElementRef
+    private appService: AppService
   ) { }
 
   async ngOnChanges(changes: SimpleChanges) {
     if (changes.items && changes.items.currentValue) {
       this.items = changes.items.currentValue;
-      console.log(this.items);
     }
   }
 

@@ -30,7 +30,6 @@ export class AppComponent {
 
     this.appService.getData()
     .subscribe(async (response) => {
-      console.log('RES');
       // Sort the response by date published most recently
       await response.items.sort((a, b) => {
         a = new Date(a.item_published);
@@ -38,12 +37,7 @@ export class AppComponent {
         return a > b ? -1 : a < b ? 1 : 0;
       });
 
-      console.log(response.items);
-
       this.items = this.items.concat(response.items);
-
-      // Push new page of items to array
-      // this.items.push(response.items);
 
       this.dataLoaded = true;
 
@@ -67,6 +61,12 @@ export class AppComponent {
       // Turn all filters on
       // Another option is to display a message and give a call to action to the user as to what they could do next
       this.filters = this.appService.getPostFilters();
+
+      await this.items.sort((a, b) => {
+        a = new Date(a.item_published);
+        b = new Date(b.item_published);
+        return a > b ? -1 : a < b ? 1 : 0;
+      });
 
     } else {
       this.filters = $event.filters;
