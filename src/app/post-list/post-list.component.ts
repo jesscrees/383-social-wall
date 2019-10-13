@@ -1,6 +1,5 @@
-import { Component, Input, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { AppService } from '../app.service';
-import { NgxMasonryComponent } from 'ngx-masonry';
 
 @Component({
   selector: 'app-post-list',
@@ -11,8 +10,6 @@ export class PostListComponent implements OnChanges {
   @Input() filters: any[] = this.appService.getPostFilters();
   @Input() items: any[] = [];
 
-  @ViewChild(NgxMasonryComponent, {static: false}) masonry: NgxMasonryComponent;
-
 
   constructor(
     private appService: AppService
@@ -22,7 +19,6 @@ export class PostListComponent implements OnChanges {
 
     if (changes.items && changes.items.currentValue) {
       this.items = changes.items.currentValue;
-      this.masonry.reloadItems();
     }
   }
 
