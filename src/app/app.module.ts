@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { NgxImagesloadedModule } from 'ngx-imagesloaded';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
     MatButtonModule,
     MatCardModule,
     MatProgressSpinnerModule,
+    NgxImagesloadedModule,
     NgxMasonryModule,
     ReactiveFormsModule,
     BrowserAnimationsModule

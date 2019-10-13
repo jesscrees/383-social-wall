@@ -1,25 +1,10 @@
 
-
-
-
 label {
   cursor: pointer;
   padding: 12px;
   text-align: center;
   width: 100%;
-
-  // -webkit-transition: background-color 0.3s, color 0.4s ;
-  // -moz-transition: background-color 0.4s , color 0.4s ;
-  // -o-transition: background-color 0.4s , color 0.4s ;
-  // transition: background-color 0.4s , color 0.4s ;
 }
-
-// label:hover {
-//   background-color: white;
-//   color: black;
-//   cursor: pointer;
-// }
-
 
 
 .filter {
@@ -46,12 +31,6 @@ label {
     }
   }
 }
- 
-// label:hover {
-//   background: white;
-//   color: black;
-//   cursor: pointer;
-// }
 
 
 input[type="checkbox"] {

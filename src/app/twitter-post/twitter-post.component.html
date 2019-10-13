@@ -1,8 +1,14 @@
-<mat-card>
+<div class="post">
   <p>Tweet</p>
 
-  <img [src]="item.item_data.image_url">
-  <img [src]="item.item_data.user.avatar">
+  <div *ngIf="item.item_data.image_url" class="image">
+    <img [src]="item.item_data.image_url" [alt]="item.item_name">
+  </div>
+
+  <div *ngIf="item.item_data.user.avatar" class="image">
+      <img [src]="item.item_data.user.avatar" [alt]="item.item_name">
+    </div>
+
 
   <div>
     Name: {{item.item_data.user.name}}
@@ -18,4 +24,7 @@
       {{item.item_data.is_reply | json}}
       {{item.item_data.is_retweet | json}}
   </pre> -->
-</mat-card>
+  <pre>
+      {{item.item_published | json}}
+  </pre>
+</div>

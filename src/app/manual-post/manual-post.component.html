@@ -1,6 +1,9 @@
-<mat-card class="post">
+<div class="post">
 
-  <img [src]="item.item_data.image_url" [alt]="item.item_name">
+  <div *ngIf="item.item_data.image_url" class="image">
+    <img [src]="item.item_data.image_url" [alt]="item.item_name">
+  </div>
+  
 
   <div class="itemText">
     {{item.item_data.text}}
@@ -14,4 +17,4 @@
       {{item.item_published | json}}
   </pre>
   
-</mat-card>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-manual-post',
@@ -8,9 +9,22 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ManualPostComponent implements OnInit {
   @Input() item: any;
 
-  constructor() { }
+
+  constructor(
+    private appService: AppService
+  ) { }
 
   ngOnInit() {
+    this.verifyImages();
+  }
+
+
+  verifyImages() {
+    this.appService.verifyImageURL(this.item.item_data.image_url, (imageExists) => {
+      if (!imageExists) {
+        this.item.item_data.image_url = this.appService.replaceWithPlaceholderImage();
+      }
+    });
   }
 
 }

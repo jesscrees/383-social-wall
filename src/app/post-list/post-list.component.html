@@ -1,22 +1,22 @@
-<div class="masonry-with-columns">
-  <div
-      *ngFor="let item of items"
-      class="masonry-item"
-      [ngClass]="{
-        'hidden': !postIsNotFiltered(item)
-      }">
-    <ng-container *ngIf="postIsNotFiltered(item)">
-      <app-manual-post
-        *ngIf="item.service_slug === 'manual'"
+<ngx-masonry [options]="{
+      columnWidth: '.grid-sizer',
+      horizontalOrder: true,
+      itemSelector: '.masonry-item'
+    }">  
+  <ng-container *ngFor="let item of items">
+    <div class="grid-sizer"></div>
+
+    <div *ngIf="postIsNotFiltered(item)" ngxMasonryItem class="masonry-item" >
+      {{item.item_published | json}}
+      
+      <app-manual-post  *ngIf="postIsNotFiltered(item) && item.service_slug === 'manual'"
         [item]="item"></app-manual-post>
 
-      <app-instagram-post
-        *ngIf="item.service_slug === 'instagram'"
+      <app-instagram-post *ngIf="postIsNotFiltered(item) && item.service_slug === 'instagram'" 
         [item]="item"></app-instagram-post>
 
-      <app-twitter-post
-        *ngIf="item.service_slug === 'twitter'"
+      <app-twitter-post *ngIf="postIsNotFiltered(item) && item.service_slug === 'twitter'" 
         [item]="item"></app-twitter-post>
-    </ng-container>
-  </div>
-</div>
+    </div>
+  </ng-container>
+</ngx-masonry>

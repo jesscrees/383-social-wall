@@ -1,5 +1,6 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ViewChild, ElementRef, HostListener, AfterViewInit, QueryList, ViewChildren } from '@angular/core';
 import { AppService } from '../app.service';
+import { NgxMasonryComponent } from 'ngx-masonry';
 
 @Component({
   selector: 'app-post-list',
@@ -10,26 +11,32 @@ export class PostListComponent implements OnChanges {
   @Input() filters: any[] = this.appService.getPostFilters();
   @Input() items: any[] = [];
 
-  imageSrc = "http://lorempixel.com/400/200/fashion/";
+  @ViewChild(NgxMasonryComponent, {static: false}) masonry: NgxMasonryComponent;
 
-  
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    console.log('resizing');
+    this.masonry.updateLayout = true;
+    this.masonry.useImagesLoaded = true;
+    this.masonry.reloadItems();
+  }
+
+
   constructor(
-    private appService: AppService
+    private appService: AppService,
+    private elementRef: ElementRef
   ) { }
 
-  ngOnChanges(changes: SimpleChanges) {
+  async ngOnChanges(changes: SimpleChanges) {
     if (changes.items && changes.items.currentValue) {
       this.items = changes.items.currentValue;
-
-      this.items.forEach(element => {
-        const randomID = Math.floor(Math.random() * 10) + 1;
-
-        element.item_data.image_url = this.imageSrc + randomID;
-      });
+      console.log(this.items);
     }
   }
 
   postIsNotFiltered(item): boolean {
     return this.filters.filter(x => x.name === item.service_name && x.enabled).length > 0;
   }
+
 }
