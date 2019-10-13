@@ -24,9 +24,9 @@ export class AppService {
     return body || { };
   }
 
-  getData(): Observable<any> {
+  getData(limit, offset): Observable<any> {
     return this.httpClient
-    .get(this.apiEndpoint)
+    .get(this.apiEndpoint + '?limit=' + limit + '&offset=' + offset)
     .pipe(map(this.extractData));
   }
 

@@ -1,11 +1,11 @@
 <div class="post">
   <p>Tweet</p>
 
-  <div *ngIf="item.item_data.image_url" class="image">
+  <div *ngIf="item.item_data.image_url" class="imageContainer">
     <img [src]="item.item_data.image_url" [alt]="item.item_name">
   </div>
 
-  <div *ngIf="item.item_data.user.avatar" class="image">
+  <div *ngIf="item.item_data.user.avatar" class="imageContainer">
       <img [src]="item.item_data.user.avatar" [alt]="item.item_name">
     </div>
 

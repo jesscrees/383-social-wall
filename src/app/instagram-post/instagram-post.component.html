@@ -1,11 +1,11 @@
 <div class="post">
   <p>instagram</p>
 
-  <div *ngIf="item.item_data.user.avatar" class="image">
+  <div *ngIf="item.item_data.user.avatar" class="imageContainer">
     <img [src]="item.item_data.user.avatar">
   </div>
 
-  <div *ngIf="item.item_data.image.medium" class="image">
+  <div *ngIf="item.item_data.image.medium" class="imageContainer">
     <img [src]="item.item_data.image.medium">
   </div>
 

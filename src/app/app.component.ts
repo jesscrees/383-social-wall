@@ -18,6 +18,9 @@ export class AppComponent {
     strokeWidth: 8
   };
 
+  paginationLimit = 20;
+  paginationOffset = 0;
+
 
   constructor(
     private appService: AppService
@@ -28,18 +31,26 @@ export class AppComponent {
   getData() {
     this.dataLoaded = false;
 
-    this.appService.getData()
+    this.appService.getData(this.paginationLimit, this.paginationOffset)
     .subscribe(async (response) => {
       // Sort the response by date published most recently
-      await response.items.sort((a, b) => {
+      // await response.items.sort((a, b) => {
+      //   a = new Date(a.item_published);
+      //   b = new Date(b.item_published);
+      //   return a > b ? -1 : a < b ? 1 : 0;
+      // });
+
+      this.items = this.items
+      .concat(response.items)
+      .sort((a, b) => {
         a = new Date(a.item_published);
         b = new Date(b.item_published);
         return a > b ? -1 : a < b ? 1 : 0;
       });
 
-      this.items = this.items.concat(response.items);
-
       this.dataLoaded = true;
+
+      this.paginationOffset = this.paginationOffset + this.paginationLimit;
 
     }, error => {
       // Error getting data
@@ -58,8 +69,10 @@ export class AppComponent {
     });
 
     if (allFiltersTurnedOff) {
-      // Turn all filters on
-      // Another option is to display a message and give a call to action to the user as to what they could do next
+      // No filters being chosen can mean show all data and leave none out
+      // As can all filters being chosen
+      // So turn all filters on to ensure posts all displayed
+      // Another option would be to display a message and give a call to action to the user as to what they could do next
       this.filters = this.appService.getPostFilters();
 
       await this.items.sort((a, b) => {
