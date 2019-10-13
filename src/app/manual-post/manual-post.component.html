@@ -1,20 +1,26 @@
 <div class="post">
-
-  <div *ngIf="item.item_data.image_url" class="imageContainer">
-    <img [src]="item.item_data.image_url" [alt]="item.item_name">
+  <div class="source" fxLayout="column" fxLayoutAlign="end center">
+    {{item.account_name}}
   </div>
+
+  <div fxLayout="column" fxLayoutGap="20px">
+    <div *ngIf="item.item_data.image_url" class="imageContainer">
+      <img [src]="item.item_data.image_url" [alt]="item.item_name">
+    </div>
+    
   
-
-  <div class="itemText">
-    {{item.item_data.text}}
-  </div>
-
-  <div>
-    <a [href]="item.item_data.link" target="_blank">{{item.item_data.link_text}}</a>
-  </div>
-
-  <pre>
-      {{item.item_published | json}}
-  </pre>
+    <div class="itemText">
+      {{item.item_data.text}}
+    </div>
   
+    <div *ngIf="item.item_data.link_text" class="linkContainer">
+      <a class="link" [href]="item.item_data.link" target="_blank">
+        {{item.item_data.link_text}}
+      </a>
+    </div>
+  </div>
+
+  <!-- <pre>
+    {{item | json}}
+  </pre> -->
 </div>

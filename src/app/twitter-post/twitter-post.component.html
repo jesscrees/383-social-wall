@@ -1,4 +1,25 @@
 <div class="post">
+  <div class="source" fxLayout="column" fxLayoutAlign="end center">
+    b
+  </div>
+
+  <div fxLayout="column" fxLayoutGap="20px">
+    <div class="posterUsername">
+      {{item.item_data.user.username}}
+    </div>
+  
+    <div>
+      {{item.item_data.tweet}}
+    </div>
+  </div>
+
+  <!-- <pre>
+    {{item.item_data | json}}
+  </pre> -->
+</div>
+
+
+<!-- <div class="post">
   <p>Tweet</p>
 
   <div *ngIf="item.item_data.image_url" class="imageContainer">
@@ -20,11 +41,7 @@
     Tweet: {{item.item_data.tweet}}
   </div>
 
-  <!-- <pre>
-      {{item.item_data.is_reply | json}}
-      {{item.item_data.is_retweet | json}}
-  </pre> -->
   <pre>
       {{item.item_published | json}}
   </pre>
-</div>
+</div> -->

@@ -1,4 +1,6 @@
 
+$primaryColor: #D3372A;
+
 label {
   cursor: pointer;
   padding: 12px;
@@ -8,24 +10,24 @@ label {
 
 
 .filter {
-  border: 2px solid #c2185b;
-  color: #c2185b;
+  border: 2px solid $primaryColor;
+  color: $primaryColor;
   -webkit-transition: background-color 0.3s, color 0.4s ;
   -moz-transition: background-color 0.4s , color 0.4s ;
   -o-transition: background-color 0.4s , color 0.4s ;
   transition: background-color 0.4s , color 0.4s ;
 
   &:hover {
-    background-color: #c2185b;
+    background-color: $primaryColor;
     color: white;
   }
 
   &.active {
-    background-color: #c2185b;
+    background-color: $primaryColor;
     color: white;
 
     :hover {
-      background-color: #c2185b;
+      background-color: $primaryColor;
       color: white;
       cursor: pointer;
     }

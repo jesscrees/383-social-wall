@@ -11,16 +11,16 @@
       fxLayout="column" fxLayoutAlign="center center">
     <mat-spinner
       *ngIf="!dataLoaded"
+      class="progressSpinner"
       [diameter]="progressSpinnerOptions.diameter"
       [strokeWidth]="progressSpinnerOptions.strokeWidth"></mat-spinner>
 
     <button
         *ngIf="dataLoaded"
+        class="primaryButton"
         (click)="getData()"
-        color="primary"
         mat-raised-button>
       Load more
     </button>
   </div>
-
 </div>

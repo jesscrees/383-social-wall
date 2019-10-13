@@ -1,34 +1,23 @@
 <div class="post">
-  <p>instagram</p>
-
-  <div *ngIf="item.item_data.user.avatar" class="imageContainer">
-    <img [src]="item.item_data.user.avatar">
+  <div class="source" fxLayout="column" fxLayoutAlign="end center">
+    i
   </div>
 
-  <div *ngIf="item.item_data.image.medium" class="imageContainer">
-    <img [src]="item.item_data.image.medium">
+  <div fxLayout="column" fxLayoutGap="20px">
+    <div *ngIf="item.item_data.image.medium" class="imageContainer">
+      <img [alt]="item.item_data.caption" [src]="item.item_data.image.medium">
+    </div>
+
+    <div class="posterUsername">
+      {{item.item_data.user.username}}
+    </div>
+  
+    <div>
+      {{item.item_data.caption}}
+    </div>
   </div>
-
-  <!-- <img *ngIf="item.item_data.user.avatar" [src]="item.item_data.user.avatar">
-  <img *ngIf="item.item_data.image.medium" [src]="item.item_data.image.medium"> -->
-
-  <p>
-    {{item.item_data.caption}}
-  </p>
-
 
   <!-- <pre>
-    {{item.item_data.link | json}}
-    {{item.item_data.caption | json}}
-    {{item.item_data.user.username | json}}
-    {{item.item_data.user.avatar | json}}
-    {{item.item_data.image.thumb | json}}
-    {{item.item_data.image.medium | json}}
-    {{item.item_data.image.large | json}}
-    {{item.item_data.video | json}}
-    {{item.item_data.image_url | json}}
+    {{item | json}}
   </pre> -->
-  <pre>
-      {{item.item_published | json}}
-  </pre>
 </div>

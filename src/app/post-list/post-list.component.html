@@ -7,15 +7,15 @@
     <div class="grid-sizer"></div>
 
     <div ngxMasonryItem class="masonry-item" >
-      {{item.item_published | json}}
+      <!-- {{item.item_published | json}} -->
       
-      <app-manual-post  *ngIf="postIsNotFiltered(item) && item.service_slug === 'manual'"
+      <app-manual-post  *ngIf="postIsNotFiltered(item) && item.service_name === 'Manual'"
         [item]="item"></app-manual-post>
 
-      <app-instagram-post *ngIf="postIsNotFiltered(item) && item.service_slug === 'instagram'" 
+      <app-instagram-post *ngIf="postIsNotFiltered(item) && item.service_name === 'Instagram'" 
         [item]="item"></app-instagram-post>
 
-      <app-twitter-post *ngIf="postIsNotFiltered(item) && item.service_slug === 'twitter'" 
+      <app-twitter-post *ngIf="postIsNotFiltered(item) && item.service_name === 'Twitter'" 
         [item]="item"></app-twitter-post>
     </div>
   </ng-container>

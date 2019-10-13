@@ -34,12 +34,6 @@ export class AppComponent {
     this.appService.getData(this.paginationLimit, this.paginationOffset)
     .subscribe(async (response) => {
       // Sort the response by date published most recently
-      // await response.items.sort((a, b) => {
-      //   a = new Date(a.item_published);
-      //   b = new Date(b.item_published);
-      //   return a > b ? -1 : a < b ? 1 : 0;
-      // });
-
       this.items = this.items
       .concat(response.items)
       .sort((a, b) => {

@@ -1,9 +1,25 @@
 
+$primaryColor: #D3372A;
+
 .container {
   height: 100%;
   padding: 12px;
 }
 
-mat-spinner {
+mat-spinner.progressSpinner {
   margin: 12px;
 }
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $primaryColor;
+}
+
+.primaryButton {
+  background-color: $primaryColor
+}
+
+.loadMore {
+  padding-bottom: 24px;
+}
+
+
