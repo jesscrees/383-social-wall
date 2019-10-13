@@ -39,11 +39,11 @@ export class AppService {
     return [
       {
         name: 'Manual',
-        enabled: false
+        enabled: true
       },
       {
         name: 'Instagram',
-        enabled: false
+        enabled: true
       },
       {
         name: 'Twitter',
