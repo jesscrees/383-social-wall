@@ -1,6 +1,9 @@
-<button (click)="getData()" type="button">
-  Load more4
-</button>
+<div class="buttonContainer">
+  <button class="primaryButton" (click)="getData()" mat-raised-button type="button">
+    Load more4
+  </button>
+</div>
+
 <div
     class="container"
     fxLayout="column" fxLayoutGap="12px">
@@ -37,4 +40,16 @@
       Load more5
     </button>
   </div>
+</div>
+
+<div class="buttonContainer" fxLayout="column" fxLayoutAlign="center center">
+  <mat-spinner
+    *ngIf="!dataLoaded"
+    class="progressSpinner"
+    [diameter]="progressSpinnerOptions.diameter"
+    [strokeWidth]="progressSpinnerOptions.strokeWidth"></mat-spinner>
+
+  <button class="primaryButton" (click)="getData()" mat-raised-button type="button">
+    Load more4
+  </button>
 </div>
