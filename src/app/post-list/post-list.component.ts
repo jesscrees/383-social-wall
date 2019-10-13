@@ -16,7 +16,6 @@ export class PostListComponent implements OnChanges {
   ) { }
 
   ngOnChanges(changes: SimpleChanges) {
-
     if (changes.items && changes.items.currentValue) {
       this.items = changes.items.currentValue;
     }

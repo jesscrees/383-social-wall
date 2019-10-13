@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PostComponent } from './post/post.component';
 import { FilterComponent } from './filter/filter.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { TwitterPostComponent } from './twitter-post/twitter-post.component';
@@ -22,7 +21,6 @@ import { NgxImagesloadedModule } from 'ngx-imagesloaded';
 @NgModule({
   declarations: [
     AppComponent,
-    PostComponent,
     FilterComponent,
     PostListComponent,
     TwitterPostComponent,
@@ -33,15 +31,17 @@ import { NgxImagesloadedModule } from 'ngx-imagesloaded';
     BrowserModule,
     AppRoutingModule,
 
+    BrowserAnimationsModule,
     HttpClientModule,
     FlexLayoutModule,
+
     MatButtonModule,
     MatCardModule,
     MatProgressSpinnerModule,
+
     NgxImagesloadedModule,
     NgxMasonryModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

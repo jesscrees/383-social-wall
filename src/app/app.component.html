@@ -1,33 +1,32 @@
+<button (click)="getData()" type="button">
+  Load more4
+</button>
 <div
     class="container"
     fxLayout="column" fxLayoutGap="12px">
 
-  <button (click)="getData()" type="button">
+  <button type="button">
     Load more1
   </button>
 
-  <!-- <app-filter (filtersChanged)="filtersChanged($event)"></app-filter> -->
+  <app-filter (filtersChanged)="filtersChanged($event)"></app-filter>
 
-  <button (click)="getData()" type="button">
+  <button (click)="getData()">
     Load more2
   </button>
 
   <app-post-list [filters]="filters" [items]="items"></app-post-list>
-  <button (click)="getData()" type="button">
+  <button>
     Load more3
   </button>
   <div
       class="loadMore"
       fxLayout="column" fxLayoutAlign="center center">
-    <button (click)="getData()" type="button">
-      Load more4
-    </button>
-    <br/>
-    <!-- <mat-spinner
+    <mat-spinner
       *ngIf="!dataLoaded"
       class="progressSpinner"
       [diameter]="progressSpinnerOptions.diameter"
-      [strokeWidth]="progressSpinnerOptions.strokeWidth"></mat-spinner> -->
+      [strokeWidth]="progressSpinnerOptions.strokeWidth"></mat-spinner>
 
     <button
         *ngIf="dataLoaded"
