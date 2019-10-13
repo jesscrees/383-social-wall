@@ -16,10 +16,9 @@
       [strokeWidth]="progressSpinnerOptions.strokeWidth"></mat-spinner> -->
 
     <button
-        
+        *ngIf="dataLoaded"
         class="primaryButton"
-        (click)="getData()"
-        mat-raised-button>
+        (click)="getData()">
       Load more
     </button>
   </div>
