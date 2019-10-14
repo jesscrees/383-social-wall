@@ -4,9 +4,10 @@
   </div>
 
   <div fxLayout="column" fxLayoutGap="20px">
-    <div *ngIf="item.item_data.image.medium" class="imageContainer">
-      <img [alt]="item.item_data.caption" [src]="item.item_data.image.medium">
-    </div>
+    <div
+      *ngIf="item.item_data.image.medium"
+      class="imageContainer"
+      [style.backgroundImage]="'url('+ item.item_data.image.medium +')'"></div>
 
     <div class="posterUsername">
       {{item.item_data.user.username}}

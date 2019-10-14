@@ -4,11 +4,11 @@
   </div>
 
   <div fxLayout="column" fxLayoutGap="20px">
-    <div *ngIf="item.item_data.image_url" class="imageContainer">
-      <img [src]="item.item_data.image_url" [alt]="item.item_name">
-    </div>
+    <div
+      *ngIf="item.item_data.image_url"
+      class="imageContainer"
+      [style.backgroundImage]="'url('+ item.item_data.image_url +')'"></div>
     
-  
     <div class="itemText">
       {{item.item_data.text}}
     </div>
