@@ -1,9 +1,9 @@
+@import 'src/app/shared/variables.scss';
 
-$primaryColor: #D3372A;
 
 label {
   cursor: pointer;
-  padding: 12px;
+  padding: $padding;
   text-align: center;
   width: 100%;
 }
@@ -11,24 +11,25 @@ label {
 
 .filter {
   border: 2px solid $primaryColor;
+  border-radius: $borderRadius;
   color: $primaryColor;
-  -webkit-transition: background-color 0.3s, color 0.4s ;
-  -moz-transition: background-color 0.4s , color 0.4s ;
-  -o-transition: background-color 0.4s , color 0.4s ;
-  transition: background-color 0.4s , color 0.4s ;
+  -webkit-transition: background-color $transitionTime, color $transitionTime;
+  -moz-transition: background-color $transitionTime, color $transitionTime;
+  -o-transition: background-color $transitionTime, color $transitionTime;
+  transition: background-color $transitionTime, color $transitionTime;
 
   &:hover {
     background-color: $primaryColor;
-    color: white;
+    color: $lightTextColor;
   }
 
   &.active {
     background-color: $primaryColor;
-    color: white;
+    color: $lightTextColor;
 
     :hover {
       background-color: $primaryColor;
-      color: white;
+      color: $lightTextColor;
       cursor: pointer;
     }
   }

@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { NgxImagesloadedModule } from 'ngx-imagesloaded';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NgxImagesloadedModule } from 'ngx-imagesloaded';
     AppRoutingModule,
 
     BrowserAnimationsModule,
+    FontAwesomeModule,
     HttpClientModule,
     FlexLayoutModule,
 

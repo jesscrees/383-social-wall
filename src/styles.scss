@@ -1,6 +1,4 @@
-@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
-
-$primaryColor: #D3372A;
+@import 'src/app/shared/variables.scss';
 
 
 html, body {
@@ -9,12 +7,7 @@ html, body {
 
 body { 
   background-color: whitesmoke;
+  color: $bodyTextColor !important;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-mat-card {
-  background-color: white !important;
-  color: black !important;
-}
-

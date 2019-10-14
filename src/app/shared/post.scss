@@ -1,22 +1,31 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
 @import 'src/app/shared/variables.scss';
 
 
 .post {
+  @include mat-elevation(1);
   background-color: white;
-  border-radius: 4px;
+  border-radius: $borderRadius;
   margin: 10px 5px;
   padding: 20px;
   position: relative;
 
   .source {
-    border-radius: 4px;
-    height: 50px;
-    padding-bottom: 10px;
+    border-radius: $borderRadius;
+    color: $lightTextColor;
+    height: 45px;
+    padding-bottom: 2px;
     position: absolute;
     top: -10px;
     left: 20px;
     text-align: center;
-    width: 40px;
+    width: 35px;
+
+    fa-icon {
+      font-size: 26px;
+    }
   }
 
   .imageContainer {

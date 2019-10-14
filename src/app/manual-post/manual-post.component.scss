@@ -1,7 +1,8 @@
 @import 'src/app/shared/post.scss';
+@import 'src/app/shared/variables.scss';
 
 
-.source {
-  background-color: #D3372A;
-  color: white;
+.post .source {
+  background-color: $primaryColor;
+  padding-bottom: 8px;
 }

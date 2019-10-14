@@ -2,11 +2,11 @@
 
 
 .container {
-  padding: 12px;
+  padding: $padding;
 }
 
 mat-spinner.progressSpinner {
-  margin: 12px;
+  margin: $padding;
 }
 
 ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {

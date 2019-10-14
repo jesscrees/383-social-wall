@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppService } from '../app.service';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-instagram-post',
@@ -8,6 +9,7 @@ import { AppService } from '../app.service';
 })
 export class InstagramPostComponent implements OnInit {
   @Input() item: any;
+  faInstagram = faInstagram;
 
 
   constructor(

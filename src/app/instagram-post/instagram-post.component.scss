@@ -1,9 +1,10 @@
 @import 'src/app/shared/post.scss';
+@import 'src/app/shared/variables.scss';
 
 
 .source {
   background-color: black;
-  color: white;
+  color: $lightTextColor;
 }
 
 .posterUsername {
