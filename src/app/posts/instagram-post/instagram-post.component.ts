@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AppService } from '../app.service';
+import { AppService } from '../../app.service';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import * as globals from 'src/app/globals';
 
 @Component({
   selector: 'app-instagram-post',
@@ -10,6 +11,8 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 export class InstagramPostComponent implements OnInit {
   @Input() item: any;
   faInstagram = faInstagram;
+
+  progressSpinnerOptions = globals.progressSpinnerOptions;
 
 
   constructor(

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AppService } from '../app.service';
+import { AppService } from '../../app.service';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 @Component({

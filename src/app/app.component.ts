@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
+import * as globals from 'src/app/globals';
+import { Filter } from 'src/app/shared/models/filter.model';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +11,13 @@ import { AppService } from './app.service';
 export class AppComponent {
   dataLoaded = false;
 
-  items = [];
+  items: any[] = [];
 
-  filters: any[] = this.appService.getPostFilters();
+  filters: Filter[] = this.appService.getPostFilters();
 
-  progressSpinnerOptions: any = {
-    diameter: 60,
-    strokeWidth: 8
-  };
+  progressSpinnerOptions: any = globals.progressSpinnerOptions;
 
-  paginationLimit = 20;
+  paginationLimit = globals.paginationLimit;
   paginationOffset = 0;
 
 
@@ -29,6 +28,7 @@ export class AppComponent {
   }
 
   getData() {
+    // Shows progress spinner
     this.dataLoaded = false;
 
     this.appService.getData(this.paginationLimit, this.paginationOffset)
@@ -42,8 +42,10 @@ export class AppComponent {
         return a > b ? -1 : a < b ? 1 : 0;
       });
 
+      // Hides progress spinner
       this.dataLoaded = true;
 
+      // Increase pagination offset in preparation for making another call to load more data
       this.paginationOffset = this.paginationOffset + this.paginationLimit;
 
     }, error => {

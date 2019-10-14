@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Filter } from './shared/models/filter.model';
 
 @Injectable({
   providedIn: 'root'
@@ -37,18 +38,18 @@ export class AppService {
     // Chosen to hard code filters instead of basing them on data returned from api
     // as paginated data could mean an incomplete list of filters is generated
     return [
-      {
+      new Filter({
         name: 'Manual',
         enabled: true
-      },
-      {
+      }),
+      new Filter({
         name: 'Instagram',
         enabled: true
-      },
-      {
+      }),
+      new Filter({
         name: 'Twitter',
         enabled: true
-      }
+      })
     ];
   }
 
