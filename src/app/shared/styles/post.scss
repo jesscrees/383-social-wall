@@ -13,7 +13,7 @@
   position: relative;
 
   .source {
-    background-color: $bodyTextColor;
+    background-color: #222222;
     border-radius: $borderRadius;
     color: $lightTextColor;
     height: 45px;
@@ -29,6 +29,10 @@
     }
   }
 
+  .postContent {
+    line-height: 20px;
+  }
+
   .imageContainer {
     background-position: center center;
     background-repeat: no-repeat;
@@ -41,8 +45,13 @@
     }
   }
 
-  .link {
-    color: $primaryColor;
-    text-decoration: none;
+  .linkContainer {
+    line-height: 20px;
   }
+}
+
+::ng-deep .linkified,
+.link {
+  color: $primaryColor;
+  text-decoration: none;
 }

@@ -13,6 +13,7 @@ export class InstagramPostComponent implements OnInit {
   faInstagram = faInstagram;
 
   progressSpinnerOptions = globals.progressSpinnerOptions;
+  linkifyOptions = globals.linkifyOptions;
 
 
   constructor(

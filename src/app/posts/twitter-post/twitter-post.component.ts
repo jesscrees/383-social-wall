@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppService } from '../../app.service';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import * as globals from 'src/app/globals';
 
 @Component({
   selector: 'app-twitter-post',
@@ -11,6 +12,7 @@ export class TwitterPostComponent implements OnInit {
   @Input() item: any;
   faTwitter = faTwitter;
 
+  linkifyOptions = globals.linkifyOptions;
 
   constructor(
     private appService: AppService

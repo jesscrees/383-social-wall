@@ -8,9 +8,7 @@
       {{item.item_data.user.username}}
     </div>
   
-    <div>
-      {{item.item_data.tweet}}
-    </div>
+    <div class="postContent" [innerHTML]="item.item_data.tweet | linkify: linkifyOptions"></div>
   </div>
 
   <!-- <pre>

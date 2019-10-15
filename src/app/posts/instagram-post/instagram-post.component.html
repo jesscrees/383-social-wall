@@ -12,10 +12,8 @@
     <div class="posterUsername">
       {{item.item_data.user.username}}
     </div>
-  
-    <div>
-      {{item.item_data.caption}}
-    </div>
+
+    <div class="postContent" [innerHTML]="item.item_data.caption | linkify: linkifyOptions"></div>
   </div>
 
   <!-- <pre>

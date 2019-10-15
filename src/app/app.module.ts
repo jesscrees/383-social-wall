@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMasonryModule } from 'ngx-masonry';
 import { NgxImagesloadedModule } from 'ngx-imagesloaded';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxLinkifyjsModule } from 'ngx-linkifyjs';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatProgressSpinnerModule,
 
     NgxImagesloadedModule,
+    NgxLinkifyjsModule.forRoot(),
     NgxMasonryModule,
     ReactiveFormsModule
   ],

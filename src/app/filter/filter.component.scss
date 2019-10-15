@@ -1,3 +1,6 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
 @import 'src/app/shared/styles/variables.scss';
 
 
@@ -8,23 +11,27 @@ label {
   width: 100%;
 }
 
-
 .filter {
-  border: 2px solid $primaryColor;
+  @include mat-elevation(1);
+
+  background-color: white;
+  border: 2px solid white;
   border-radius: $borderRadius;
   color: $primaryColor;
-  -webkit-transition: background-color $transitionTime, color $transitionTime;
-  -moz-transition: background-color $transitionTime, color $transitionTime;
-  -o-transition: background-color $transitionTime, color $transitionTime;
-  transition: background-color $transitionTime, color $transitionTime;
+  -webkit-transition: background-color $transitionTime, border-color $transitionTime, color $transitionTime;
+  -moz-transition: background-color $transitionTime, border-color $transitionTime, color $transitionTime;
+  -o-transition: background-color $transitionTime, border-color $transitionTime, color $transitionTime;
+  transition: background-color $transitionTime, border-color $transitionTime, color $transitionTime;
 
   &:hover {
     background-color: $primaryColor;
+    border-color: $primaryColor;
     color: $lightTextColor;
   }
 
   &.active {
     background-color: $primaryColor;
+    border-color: $primaryColor;
     color: $lightTextColor;
 
     :hover {
