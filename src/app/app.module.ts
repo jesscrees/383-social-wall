@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
@@ -18,7 +17,10 @@ const appRoutes: Routes = [
     redirectTo: 'social-wall',
     pathMatch: 'full'
   },
-  { path: '**', component: SocialWallComponent }
+  { path: '**',
+    redirectTo: 'social-wall',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
@@ -27,7 +29,6 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    // AppRoutingModule,
     RouterModule.forRoot(appRoutes),
 
     BrowserAnimationsModule,

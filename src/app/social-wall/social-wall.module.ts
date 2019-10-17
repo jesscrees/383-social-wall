@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SocialWallRoutingModule } from './social-wall-routing.module';
 import { SocialWallComponent } from './social-wall.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -30,7 +29,6 @@ import { ManualPostComponent } from '../posts/manual-post/manual-post.component'
   ],
   imports: [
     CommonModule,
-    // SocialWallRoutingModule,
 
     FontAwesomeModule,
     FlexLayoutModule,
