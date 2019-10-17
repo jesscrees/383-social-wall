@@ -16,6 +16,7 @@ import { PostListComponent } from '../post-list/post-list.component';
 import { TwitterPostComponent } from '../posts/twitter-post/twitter-post.component';
 import { InstagramPostComponent } from '../posts/instagram-post/instagram-post.component';
 import { ManualPostComponent } from '../posts/manual-post/manual-post.component';
+import { SocialWallRoutingModule } from './social-wall-routing.module';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ManualPostComponent } from '../posts/manual-post/manual-post.component'
   ],
   imports: [
     CommonModule,
+    SocialWallRoutingModule,
 
     FontAwesomeModule,
     FlexLayoutModule,
