@@ -68,7 +68,7 @@ export class SocialWallComponent {
     if (allFiltersTurnedOff) {
       // No filters being chosen can mean show all data and leave none out
       // As can all filters being chosen
-      // So turn all filters on to ensure posts all displayed
+      // So, if all filters are off, turn them all on to ensure all posts are displayed
       // Another option would be to display a message and give a call to action to the user as to what they could do next
       this.filters = this.appService.getPostFilters();
 

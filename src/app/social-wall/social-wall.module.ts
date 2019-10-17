@@ -17,7 +17,6 @@ import { PostListComponent } from '../post-list/post-list.component';
 import { TwitterPostComponent } from '../posts/twitter-post/twitter-post.component';
 import { InstagramPostComponent } from '../posts/instagram-post/instagram-post.component';
 import { ManualPostComponent } from '../posts/manual-post/manual-post.component';
-import { AppModule } from '../app.module';
 
 
 @NgModule({

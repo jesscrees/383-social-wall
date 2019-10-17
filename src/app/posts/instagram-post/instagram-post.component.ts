@@ -10,10 +10,12 @@ import * as globals from 'src/app/globals';
 })
 export class InstagramPostComponent implements OnInit {
   @Input() item: any;
+
   faInstagram = faInstagram;
 
   progressSpinnerOptions = globals.progressSpinnerOptions;
-  linkifyOptions = globals.linkifyOptions;
+
+  linkifyOptions = Object.create(globals.linkifyOptions);
 
 
   constructor(
@@ -21,7 +23,21 @@ export class InstagramPostComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.overrideLinkifyOptions();
+
     this.verifyImages();
+  }
+
+
+  overrideLinkifyOptions() {
+    this.linkifyOptions.formatHref = (href, type) => {
+      if (type === 'hashtag') {
+        return 'https://www.instagram.com/explore/tags/' + href.substr(1);
+
+      } else {
+        return href;
+      }
+    };
   }
 
 

@@ -3,6 +3,7 @@
 
 .container {
   padding: $padding;
+  padding-bottom: 24px;
 }
 
 mat-spinner.progressSpinner {
@@ -11,12 +12,4 @@ mat-spinner.progressSpinner {
 
 ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
   stroke: $primaryColor;
-}
-
-.primaryButton {
-  background-color: $primaryColor;
-}
-
-.loadMore {
-  padding-bottom: 24px;
 }

@@ -12,14 +12,31 @@ export class TwitterPostComponent implements OnInit {
   @Input() item: any;
   faTwitter = faTwitter;
 
-  linkifyOptions = globals.linkifyOptions;
+  linkifyOptions = Object.create(globals.linkifyOptions);
 
   constructor(
     private appService: AppService
   ) { }
 
   ngOnInit() {
+    this.overrideLinkifyOptions();
+
     this.verifyImages();
+  }
+
+
+  overrideLinkifyOptions() {
+    this.linkifyOptions.formatHref = (href, type) => {
+      if (type === 'hashtag') {
+        return 'https://twitter.com/search?q=%23' + href.substr(1);
+
+      } else if (type === 'mention') {
+        return 'https://twitter.com/' + href;
+
+      } else {
+        return href;
+      }
+    };
   }
 
 

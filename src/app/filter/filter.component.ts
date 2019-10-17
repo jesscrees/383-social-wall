@@ -44,7 +44,21 @@ export class FilterComponent implements OnInit {
   get filters(): FormArray { return this.form.get('filters') as FormArray; }
 
 
-  handleClick() {
+  async handleClick() {
     this.filtersChanged.emit(this.form.value);
+
+    let allFiltersTurnedOff = true;
+
+    await this.form.value.filters.forEach(element => {
+      if (element.enabled) {
+        allFiltersTurnedOff = false;
+      }
+    });
+
+    if (allFiltersTurnedOff) {
+      this.postFilters = this.appService.getPostFilters();
+
+      this.createForm();
+    }
   }
 }

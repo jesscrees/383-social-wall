@@ -1,1 +1,23 @@
-<p>settings works!</p>
+<div
+    class="container"
+    fxLayout="column" fxLayoutGap="20px">
+  <button
+      class="primaryButton"
+      fxFlexAlign="start"
+      mat-raised-button
+      routerLink="/social-wall"
+      type="button">
+    Back to social wall
+  </button>
+
+  <div class="post">
+    <mat-slide-toggle
+        [checked]="placeholderImagesTurnedOn"
+        class="slideToggle"
+        color="primary"
+        (dragChange)="toggleValue()"
+        (toggleChange)="toggleValue()">
+      Turn {{(placeholderImagesTurnedOn) ? 'off' : 'on'}} placeholder images
+    </mat-slide-toggle>
+  </div>
+</div>

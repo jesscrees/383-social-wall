@@ -30,7 +30,7 @@
   }
 
   .postContent {
-    line-height: 20px;
+    line-height: 22px;
   }
 
   .spacer {
@@ -58,4 +58,5 @@
 .link {
   color: $primaryColor;
   text-decoration: none;
+  word-wrap: break-word;
 }
