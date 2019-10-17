@@ -30,7 +30,7 @@ import { ManualPostComponent } from '../posts/manual-post/manual-post.component'
   ],
   imports: [
     CommonModule,
-    SocialWallRoutingModule,
+    // SocialWallRoutingModule,
 
     FontAwesomeModule,
     FlexLayoutModule,

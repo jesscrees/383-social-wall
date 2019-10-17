@@ -13,7 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [SettingsComponent],
   imports: [
     CommonModule,
-    SettingsRoutingModule,
+    // SettingsRoutingModule,
 
     FlexLayoutModule,
 
