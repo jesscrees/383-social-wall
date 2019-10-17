@@ -1,0 +1,22 @@
+@import 'src/app/shared/styles/variables.scss';
+
+
+.container {
+  padding: $padding;
+}
+
+mat-spinner.progressSpinner {
+  margin: $padding;
+}
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $primaryColor;
+}
+
+.primaryButton {
+  background-color: $primaryColor;
+}
+
+.loadMore {
+  padding-bottom: 24px;
+}

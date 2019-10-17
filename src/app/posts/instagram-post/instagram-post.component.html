@@ -9,6 +9,8 @@
       class="imageContainer"
       [style.backgroundImage]="'url('+ item.item_data.image.medium +')'"></div>
 
+    <div *ngIf="!item.item_data.image.medium" class="spacer"></div>
+
     <div class="posterUsername">
       {{item.item_data.user.username}}
     </div>

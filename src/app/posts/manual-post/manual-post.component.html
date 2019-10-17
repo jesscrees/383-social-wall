@@ -8,6 +8,8 @@
       *ngIf="item.item_data.image_url"
       class="imageContainer"
       [style.backgroundImage]="'url('+ item.item_data.image_url +')'"></div>
+
+    <div *ngIf="!item.item_data.image_url" class="spacer"></div>
     
     <div class="itemText postContent">
       {{item.item_data.text}}
