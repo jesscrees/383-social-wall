@@ -18,7 +18,7 @@
     <div class="postContent" [innerHTML]="item.item_data.caption | linkify: linkifyOptions"></div>
   </div>
 
-  <!-- <pre>
-    {{item | json}}
-  </pre> -->
+  <div class="relativeTimestamp">
+    {{item.item_published | relativeDate}}
+  </div>
 </div>

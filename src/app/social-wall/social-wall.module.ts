@@ -19,6 +19,7 @@ import { ManualPostComponent } from '../posts/manual-post/manual-post.component'
 import { SocialWallRoutingModule } from './social-wall-routing.module';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { SlideshowComponent } from '../slideshow/slideshow.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { SlideshowComponent } from '../slideshow/slideshow.component';
     NgxImagesloadedModule,
     NgxLinkifyjsModule.forRoot(),
     NgxMasonryModule,
+    PipesModule,
     ReactiveFormsModule,
     SlideshowModule
   ]

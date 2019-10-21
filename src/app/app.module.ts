@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SocialWallModule } from './social-wall/social-wall.module';
 import { SettingsModule } from './settings/settings.module';
 import { AppRoutingModule } from './app-routing.module';
+import { PipesModule } from './pipes/pipes.module';
 
 
 @NgModule({
@@ -20,10 +21,10 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     HttpClientModule,
 
+    PipesModule,
     SettingsModule,
     SocialWallModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

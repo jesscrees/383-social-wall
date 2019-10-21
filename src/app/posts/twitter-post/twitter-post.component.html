@@ -4,7 +4,6 @@
   </div>
 
   <div fxLayout="column" fxLayoutGap="20px">
-
     <div class="spacer"></div>
 
     <div class="posterUsername">
@@ -14,7 +13,7 @@
     <div class="postContent" [innerHTML]="item.item_data.tweet | linkify: linkifyOptions"></div>
   </div>
 
-  <!-- <pre>
-    {{item.item_data | json}}
-  </pre> -->
+  <div class="relativeTimestamp">
+    {{item.item_published | relativeDate}}
+  </div>
 </div>
