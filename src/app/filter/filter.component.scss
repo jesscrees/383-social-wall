@@ -4,6 +4,11 @@
 @import 'src/app/shared/styles/variables.scss';
 
 
+.filtersContainer {
+  // Half padding on one side to line up with masonry layout on the left
+  padding: 8px 8px 8px 4px;
+}
+
 label {
   cursor: pointer;
   padding: $padding;

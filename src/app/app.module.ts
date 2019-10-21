@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { SocialWallModule } from './social-wall/social-wall.module';
 import { SettingsModule } from './settings/settings.module';
 import { SocialWallComponent } from './social-wall/social-wall.component';

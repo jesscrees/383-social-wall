@@ -17,6 +17,8 @@ import { TwitterPostComponent } from '../posts/twitter-post/twitter-post.compone
 import { InstagramPostComponent } from '../posts/instagram-post/instagram-post.component';
 import { ManualPostComponent } from '../posts/manual-post/manual-post.component';
 import { SocialWallRoutingModule } from './social-wall-routing.module';
+import { SlideshowModule } from 'ng-simple-slideshow';
+import { SlideshowComponent } from '../slideshow/slideshow.component';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { SocialWallRoutingModule } from './social-wall-routing.module';
     PostListComponent,
     TwitterPostComponent,
     InstagramPostComponent,
-    ManualPostComponent
+    ManualPostComponent,
+    SlideshowComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +45,8 @@ import { SocialWallRoutingModule } from './social-wall-routing.module';
     NgxImagesloadedModule,
     NgxLinkifyjsModule.forRoot(),
     NgxMasonryModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SlideshowModule
   ]
 })
 export class SocialWallModule { }

@@ -1,10 +1,14 @@
+<app-slideshow></app-slideshow>
+
 <div
     class="container"
     fxLayout="column" fxLayoutGap="12px">
-
   <app-filter (filtersChanged)="filtersChanged($event)"></app-filter>
 
-  <app-post-list *ngIf="dataLoaded" [filters]="filters" [items]="items"></app-post-list>
+  <app-post-list
+    *ngIf="dataLoaded"
+    [filters]="filters"
+    [items]="items"></app-post-list>
 
   <div
       class="loadMore"
