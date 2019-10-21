@@ -9,18 +9,17 @@ import { AppService } from '../app.service';
   styleUrls: ['./social-wall.component.scss']
 })
 export class SocialWallComponent {
-
   dataLoaded = false;
   moreDataLoaded = false;
 
-  items: any[] = [];
-
   filters: Filter[] = this.appService.getPostFilters();
 
-  progressSpinnerOptions: any = globals.progressSpinnerOptions;
+  items: any[] = [];
 
   paginationLimit = globals.paginationLimit;
   paginationOffset = 0;
+
+  progressSpinnerOptions: any = globals.progressSpinnerOptions;
 
 
   constructor(
@@ -30,14 +29,14 @@ export class SocialWallComponent {
   }
 
   getData(firstTimeLoading?) {
-    // Shows progress spinner
+    // Show progress spinner
     if (firstTimeLoading) {
       this.dataLoaded = false;
     }
     this.moreDataLoaded = false;
 
     this.appService.getData(this.paginationLimit, this.paginationOffset)
-    .subscribe(async (response) => {
+    .subscribe((response) => {
       // Sort the response by date published most recently
       this.items = this.items
       .concat(response.items)
@@ -47,7 +46,7 @@ export class SocialWallComponent {
         return a > b ? -1 : a < b ? 1 : 0;
       });
 
-      // Hides progress spinner
+      // Hide progress spinner
       if (firstTimeLoading) {
         this.dataLoaded = true;
       }

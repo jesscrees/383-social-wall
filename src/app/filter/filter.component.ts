@@ -8,7 +8,6 @@ import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
-
   @Output() filtersChanged = new EventEmitter();
 
   postFilters: any[] = this.appService.getPostFilters();

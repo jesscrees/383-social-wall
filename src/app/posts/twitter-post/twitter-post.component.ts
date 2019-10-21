@@ -14,6 +14,7 @@ export class TwitterPostComponent implements OnInit {
 
   linkifyOptions = Object.create(globals.linkifyOptions);
 
+
   constructor(
     private appService: AppService
   ) { }

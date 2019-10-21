@@ -11,8 +11,8 @@ const routes: Routes = [
     path: 'social-wall',
     loadChildren: () => import('./social-wall/social-wall.module').then(mod => mod.SocialWallModule),
   },
-  { path: '', redirectTo: '/social-wall', pathMatch: 'full' },
-  { path: '**', redirectTo: '/social-wall' }
+  { path: '', redirectTo: 'social-wall', pathMatch: 'full' },
+  { path: '**', redirectTo: 'social-wall' }
 ];
 
 @NgModule({

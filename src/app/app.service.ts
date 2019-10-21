@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Filter } from './shared/models/filter.model';
 
 @Injectable({
@@ -24,16 +23,9 @@ export class AppService {
   }
 
 
-  // private extractData(res: Response) {
-  //   const body = res;
-  //   return body || { };
-  // }
-
-
   getData(limit, offset): Observable<any> {
     return this.httpClient
     .get(this.apiEndpoint + '?limit=' + limit + '&offset=' + offset);
-    // .pipe(map(this.extractData));
   }
 
 

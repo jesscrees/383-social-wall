@@ -1,10 +1,15 @@
 @import 'src/app/shared/styles/variables.scss';
 
 
+.header {
+  padding-top: 12px;
+}
+
 .container {
   padding: $padding;
   padding-bottom: 24px;
 }
+
 
 mat-spinner.progressSpinner {
   margin: $padding;

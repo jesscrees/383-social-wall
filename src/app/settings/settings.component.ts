@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AppService } from '../app.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,7 +21,6 @@ export class SettingsComponent {
 
     localStorage.setItem('placeholderImagesTurnedOn', JSON.stringify(this.placeholderImagesTurnedOn));
   }
-
 
   backToSocialWall() {
     this.router.navigate(['/social-wall']);

@@ -7,8 +7,6 @@
     <div class="grid-sizer"></div>
 
     <div ngxMasonryItem class="masonry-item" >
-      <!-- {{item.item_published | json}} -->
-      
       <app-manual-post  *ngIf="postIsNotFiltered(item) && item.service_name === 'Manual'"
         [item]="item"></app-manual-post>
 
