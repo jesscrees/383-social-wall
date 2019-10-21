@@ -8,6 +8,8 @@ import { IImage } from 'ng-simple-slideshow';
 })
 export class SlideshowComponent {
 
+  slideshowHeight = '400px';
+
   images: IImage[] = [];
 
 
@@ -17,11 +19,12 @@ export class SlideshowComponent {
 
   getImages() {
     this.images = [
-      { url: 'assets/images/slider/michael-lee-5Z9bgfRZLLE-unsplash.jpg' },
-      { url: 'assets/images/slider/raden-prasetya-CQDkSdPOzYY-unsplash.jpg' },
-      { url: 'assets/images/slider/raden-prasetya-EvjmSg1xurI-unsplash.jpg' },
-      { url: 'assets/images/slider/yogendra-singh-C4XXBa1ZQWI-unsplash.jpg' },
-      { url: 'assets/images/slider/yogendra-singh-kOIODZD_ByQ-unsplash.jpg' },
+      { url: 'assets/images/slider/MainImage.jpg' },
+      { url: 'assets/images/slider/michael-lee-5Z9bgfRZLLE-unsplash-min.jpg' },
+      { url: 'assets/images/slider/raden-prasetya-CQDkSdPOzYY-unsplash-min.jpg' },
+      { url: 'assets/images/slider/raden-prasetya-EvjmSg1xurI-unsplash-min.jpg' },
+      { url: 'assets/images/slider/yogendra-singh-C4XXBa1ZQWI-unsplash-min.jpg' },
+      { url: 'assets/images/slider/yogendra-singh-kOIODZD_ByQ-unsplash-min.jpg' },
     ];
   }
 

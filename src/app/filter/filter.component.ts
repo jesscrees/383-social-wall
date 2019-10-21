@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AppService } from '../app.service';
 import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
+import { Filter } from '../shared/models/filter.model';
 
 @Component({
   selector: 'app-filter',
@@ -10,7 +11,7 @@ import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
 export class FilterComponent implements OnInit {
   @Output() filtersChanged = new EventEmitter();
 
-  postFilters: any[] = this.appService.getPostFilters();
+  postFilters: Filter[] = this.appService.getPostFilters();
 
   form: FormGroup;
 

@@ -14,6 +14,16 @@ body {
 }
 
 
-.primaryButton {
+button.primaryButton {
   background-color: $primaryColor;
+  border-radius: $borderRadius * 5;
+
+  -webkit-transition: opacity $transitionTime;
+  -moz-transition: opacity $transitionTime;
+  -o-transition: opacity $transitionTime;
+  transition: opacity $transitionTime;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }

@@ -11,6 +11,8 @@
 
 label {
   cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
   padding: $padding;
   text-align: center;
   width: 100%;
@@ -21,17 +23,20 @@ label {
 
   background-color: white;
   border: 2px solid white;
-  border-radius: $borderRadius;
+  border-radius: $borderRadius * 4;
   color: $primaryColor;
-  -webkit-transition: background-color $transitionTime, border-color $transitionTime, color $transitionTime;
-  -moz-transition: background-color $transitionTime, border-color $transitionTime, color $transitionTime;
-  -o-transition: background-color $transitionTime, border-color $transitionTime, color $transitionTime;
-  transition: background-color $transitionTime, border-color $transitionTime, color $transitionTime;
+
+  -webkit-transition: background-color $transitionTime, border-color $transitionTime, color $transitionTime, opacity $transitionTime;
+  -moz-transition: background-color $transitionTime, border-color $transitionTime, color $transitionTime, opacity $transitionTime;
+  -o-transition: background-color $transitionTime, border-color $transitionTime, color $transitionTime, opacity $transitionTime;
+  transition: background-color $transitionTime, border-color $transitionTime, color $transitionTime, opacity $transitionTime;
 
   &:hover {
     background-color: $primaryColor;
     border-color: $primaryColor;
+    border-radius: $borderRadius * 4;
     color: $lightTextColor;
+    opacity: 0.4;
   }
 
   &.active {
@@ -39,10 +44,12 @@ label {
     border-color: $primaryColor;
     color: $lightTextColor;
 
-    :hover {
+    &:hover {
       background-color: $primaryColor;
+      border-radius: $borderRadius * 4;
       color: $lightTextColor;
       cursor: pointer;
+      opacity: 0.8;
     }
   }
 }

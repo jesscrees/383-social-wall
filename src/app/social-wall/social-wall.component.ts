@@ -77,17 +77,21 @@ export class SocialWallComponent {
       // As can all filters being chosen
       // So, if all filters are off, turn them all on to ensure all posts are displayed
       // Another option would be to display a message and give a call to action to the user as to what they could do next
-      this.filters = this.appService.getPostFilters();
+      this.filters = this.appService.defaultFilters;
 
-      await this.items.sort((a, b) => {
+    } else {
+      this.filters = $event.filters;
+    }
+
+    this.items = this.items
+      .sort((a, b) => {
         a = new Date(a.item_published);
         b = new Date(b.item_published);
         return a > b ? -1 : a < b ? 1 : 0;
       });
 
-    } else {
-      this.filters = $event.filters;
-    }
+    // Store the filters in local storage so they persist on page change
+    localStorage.setItem('filters', JSON.stringify(this.filters));
   }
 
 }
