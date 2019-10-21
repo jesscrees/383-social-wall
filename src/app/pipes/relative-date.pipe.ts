@@ -7,6 +7,9 @@ export class RelativeDatePipe implements PipeTransform {
 
   transform(value: any, ...args: any[]): any {
     if (value) {
+      // Need to replace hyphens with slashes for Safari to understand the date format
+      value = value.replace(/-/g, '/');
+
       const seconds = Math.floor((+new Date() - +new Date(value)) / 1000);
 
       // Less than 30 seconds ago will show as 'Just now'
@@ -24,6 +27,7 @@ export class RelativeDatePipe implements PipeTransform {
         second: 1
       };
 
+
       let counter;
 
       // tslint:disable-next-line: forin
@@ -31,16 +35,10 @@ export class RelativeDatePipe implements PipeTransform {
         counter = Math.floor(seconds / intervals[i]);
 
         if (counter > 0) {
-          if (counter === 1) {
-            return counter + ' ' + i + ' ago'; // singular (1 day ago)
-          } else {
-            return counter + ' ' + i + 's ago'; // plural (2 days ago)
-          }
+          return counter + ' ' + i + (counter > 1 ? 's' : '') + ' ago';
         }
       }
     }
-
-    return value;
   }
 
 }

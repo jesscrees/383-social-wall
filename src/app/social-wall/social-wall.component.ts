@@ -48,6 +48,8 @@ export class SocialWallComponent {
         return (b.item_published > a.item_published) ? 1 : (b.item_published < a.item_published) ? -1 : 0;
       });
 
+      console.log(this.items);
+
 
       // Hide progress spinner
       if (firstTimeLoading) {
