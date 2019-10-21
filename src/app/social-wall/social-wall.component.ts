@@ -29,7 +29,7 @@ export class SocialWallComponent {
     this.getData(true);
   }
 
-  getData(firstTimeLoading) {
+  getData(firstTimeLoading?) {
     // Shows progress spinner
     if (firstTimeLoading) {
       this.dataLoaded = false;
