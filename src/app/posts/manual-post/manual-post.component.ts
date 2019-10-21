@@ -16,6 +16,8 @@ export class ManualPostComponent implements OnInit {
 
   ngOnInit() {
     this.verifyImages();
+
+    this.item.item_data.link_text = this.appService.decodeHTMLEntities(this.item.item_data.link_text);
   }
 
 

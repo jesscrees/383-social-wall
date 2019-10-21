@@ -76,4 +76,13 @@ export class AppService {
       return null;
     }
   }
+
+
+  decodeHTMLEntities(text) {
+    // Replace encoded characters
+    text = text.replace('&gt;', '>');
+    text = text.replace('&amp;', '&');
+
+    return text;
+  }
 }

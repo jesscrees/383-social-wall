@@ -23,6 +23,8 @@ export class TwitterPostComponent implements OnInit {
     this.overrideLinkifyOptions();
 
     this.verifyImages();
+
+    this.item.item_data.tweet = this.appService.decodeHTMLEntities(this.item.item_data.tweet);
   }
 
 

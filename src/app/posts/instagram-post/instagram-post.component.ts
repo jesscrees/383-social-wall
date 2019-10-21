@@ -26,6 +26,8 @@ export class InstagramPostComponent implements OnInit {
     this.overrideLinkifyOptions();
 
     this.verifyImages();
+
+    this.item.item_data.caption = this.appService.decodeHTMLEntities(this.item.item_data.caption);
   }
 
 
