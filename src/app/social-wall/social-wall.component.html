@@ -4,19 +4,19 @@
 
   <app-filter (filtersChanged)="filtersChanged($event)"></app-filter>
 
-  <app-post-list [filters]="filters" [items]="items"></app-post-list>
+  <app-post-list *ngIf="dataLoaded" [filters]="filters" [items]="items"></app-post-list>
 
   <div
       class="loadMore"
       fxLayout="column" fxLayoutAlign="center center">
     <mat-spinner
-      *ngIf="!dataLoaded"
+      *ngIf="!dataLoaded || !moreDataLoaded"
       class="progressSpinner"
       [diameter]="progressSpinnerOptions.diameter"
       [strokeWidth]="progressSpinnerOptions.strokeWidth"></mat-spinner>
 
     <button
-        *ngIf="dataLoaded"
+        *ngIf="moreDataLoaded"
         class="primaryButton"
         (click)="getData()"
         mat-raised-button

@@ -11,6 +11,7 @@ import { AppService } from '../app.service';
 export class SocialWallComponent {
 
   dataLoaded = false;
+  moreDataLoaded = false;
 
   items: any[] = [];
 
@@ -25,12 +26,15 @@ export class SocialWallComponent {
   constructor(
     private appService: AppService
   ) {
-    this.getData();
+    this.getData(true);
   }
 
-  getData() {
+  getData(firstTimeLoading) {
     // Shows progress spinner
-    this.dataLoaded = false;
+    if (firstTimeLoading) {
+      this.dataLoaded = false;
+    }
+    this.moreDataLoaded = false;
 
     this.appService.getData(this.paginationLimit, this.paginationOffset)
     .subscribe(async (response) => {
@@ -44,7 +48,11 @@ export class SocialWallComponent {
       });
 
       // Hides progress spinner
-      this.dataLoaded = true;
+      if (firstTimeLoading) {
+        this.dataLoaded = true;
+      }
+
+      this.moreDataLoaded = true;
 
       // Increase pagination offset in preparation for making another call to load more data
       this.paginationOffset = this.paginationOffset + this.paginationLimit;
@@ -59,28 +67,28 @@ export class SocialWallComponent {
   async filtersChanged($event) {
     let allFiltersTurnedOff = true;
 
-    // await $event.filters.forEach(element => {
-    //   if (element.enabled) {
-    //     allFiltersTurnedOff = false;
-    //   }
-    // });
+    await $event.filters.forEach(element => {
+      if (element.enabled) {
+        allFiltersTurnedOff = false;
+      }
+    });
 
-    // if (allFiltersTurnedOff) {
-    //   // No filters being chosen can mean show all data and leave none out
-    //   // As can all filters being chosen
-    //   // So, if all filters are off, turn them all on to ensure all posts are displayed
-    //   // Another option would be to display a message and give a call to action to the user as to what they could do next
-    //   this.filters = this.appService.getPostFilters();
+    if (allFiltersTurnedOff) {
+      // No filters being chosen can mean show all data and leave none out
+      // As can all filters being chosen
+      // So, if all filters are off, turn them all on to ensure all posts are displayed
+      // Another option would be to display a message and give a call to action to the user as to what they could do next
+      this.filters = this.appService.getPostFilters();
 
-    //   await this.items.sort((a, b) => {
-    //     a = new Date(a.item_published);
-    //     b = new Date(b.item_published);
-    //     return a > b ? -1 : a < b ? 1 : 0;
-    //   });
+      await this.items.sort((a, b) => {
+        a = new Date(a.item_published);
+        b = new Date(b.item_published);
+        return a > b ? -1 : a < b ? 1 : 0;
+      });
 
-    // } else {
+    } else {
       this.filters = $event.filters;
-    // }
+    }
   }
 
 }
