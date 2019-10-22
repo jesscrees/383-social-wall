@@ -19,6 +19,7 @@ export class SlideshowComponent {
 
   getImages() {
     this.images = [
+      { url: 'assets/images/slider/Dates.jpg' },
       { url: 'assets/images/slider/MainImage.jpg' },
       { url: 'assets/images/slider/michael-lee-5Z9bgfRZLLE-unsplash-min.jpg' },
       { url: 'assets/images/slider/raden-prasetya-CQDkSdPOzYY-unsplash-min.jpg' },

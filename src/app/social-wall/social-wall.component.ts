@@ -41,14 +41,12 @@ export class SocialWallComponent {
       this.items = this.items
       .concat(response.items)
       .sort((a, b) => {
-        // This function was found on StackOverflow
+        // This function was found on StackOverflow after it was found that the sorting method being used didn't work on Safari:
         // https://stackoverflow.com/questions/15507729/safari-doesnt-sort-array-of-objects-like-others-browsers
         // "A sort function in JavaScript is supposed to return a real number -- not true or false or a string or date.
         // Whether that number is positive, negative, or zero affects the sort result."
         return (b.item_published > a.item_published) ? 1 : (b.item_published < a.item_published) ? -1 : 0;
       });
-
-      console.log(this.items);
 
 
       // Hide progress spinner
@@ -87,13 +85,6 @@ export class SocialWallComponent {
     } else {
       this.filters = $event.filters;
     }
-
-    // this.items = this.items
-    //   .sort((a, b) => {
-    //     a = new Date(a.item_published);
-    //     b = new Date(b.item_published);
-    //     return a > b ? -1 : a < b ? 1 : 0;
-    //   });
 
     // Store the filters in local storage so they persist on page change
     localStorage.setItem('filters', JSON.stringify(this.filters));
